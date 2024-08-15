@@ -33,7 +33,7 @@ import {
 } from "../callbacks/manager.js";
 import type { RunnableConfig } from "../runnables/config.js";
 import type { BaseCache } from "../caches/base.js";
-import { StructuredToolInterface } from "../tools/index.js";
+import { StructuredToolInterface, ToolSchema } from "../tools/index.js";
 import {
   Runnable,
   RunnableLambda,
@@ -173,6 +173,7 @@ export abstract class BaseChatModel<
       | Record<string, unknown>
       | ToolDefinition
       | RunnableToolLike
+      | ToolSchema
     )[],
     kwargs?: Partial<CallOptions>
   ): Runnable<BaseLanguageModelInput, OutputMessageType, CallOptions>;
